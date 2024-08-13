@@ -1,0 +1,183 @@
+<div class="container-fluid d-flex justify-content-center align-items-center">
+  <div class="sub-container p-5 bg-white">
+    <div class="header">
+      <div class="main-header text-center mb-3">
+        <span class="fs-4" style="color: black">TrackIt</span>
+      </div>
+      <div class="sub-header text-center fs-6">Registration</div></div>
+    <div class="body">
+      <form #registerForm="ngForm" (ngSubmit)="handleSubmit(registerForm)">
+        <div class="mb-3 pt-5">
+          <label for="email" class="form-label">UserName</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            name="email"
+            ngModel
+            required
+            pattern="[a-zA-Z][a-zA-Z0-9@.]*"
+            placeholder="Enter your username"
+          />
+          <div
+            id="emailHelp"
+            class="form-text text-danger"
+            style="display: none"
+          >
+            Please Enter UserNames
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input
+            [type]="showPassword ? 'text' : 'password'"
+            class="form-control"
+            id="password"
+            name="password"
+            ngModel
+            required
+            placeholder="Enter your password"
+          />
+
+          <div
+            id="passwordHelp"
+            class="form-text w-50 text-danger"
+            style="display: none"
+          >
+            Please Enter Password
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="confirmPassword" class="form-label"
+            >Confirm Password</label
+          >
+          <input
+            [type]="showPassword ? 'text' : 'password'"
+            class="form-control"
+            id="confirmPassword"
+            name="confirmPassword"
+            ngModel
+            required
+            placeholder="please confirm your password"
+          />
+          <div
+            id="confirmPasswordHelp"
+            class="form-text w-100 text-danger"
+            style="display: none"
+          >
+            Please Enter Confirm Password
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="gender" class="form-label">Gender</label>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="gender"
+              id="male"
+              value="male"
+              ngModel
+              required
+            />
+            <label class="form-check-label" for="male">Male</label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="gender"
+              id="female"
+              value="female"
+              ngModel
+              required
+            />
+            <label class="form-check-label" for="female">Female</label>        
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="gender"
+              id="other"
+              value="other"
+              ngModel
+              required
+            />
+            <label class="form-check-label" for="other">Other</label>        
+          </div>
+        </div>
+
+
+        <div class="mb-3">
+  <label for="age" class="form-label">Age</label>
+  <input
+    type="number"
+    class="form-control"
+    id="age"
+    name="age"
+    [(ngModel)]="age"
+    required
+    placeholder="Enter your age"
+  />
+  <div
+    id="ageHelp"
+    class="form-text w-100 text-danger"
+    style="display: none"
+  >
+    Please Enter a valid Age (18 years or older)
+  </div>
+</div>
+
+        
+        <div class="mb-3">
+          <label for="confirmPassword" class="form-label">Captcha</label>
+          <input
+            type="text"
+            class="form-control"
+            id="readcaptcha"
+            name="captcha"
+            readonly
+          />
+        </div>
+        <div class="mb-3">
+          <label for="confirmPassword" class="form-label">Enter Captcha</label>
+          <input
+            type="text"
+            class="form-control"
+            id="writecaptcha"
+            name="captcha"
+            placeholder="please enter captcha"
+          />
+          <div
+            id="writecaptchaHelp"
+            class="form-text w-100 text-danger"
+            style="display: none"
+          >
+            Please Enter Captcha
+          </div>
+        </div>
+        <button type="submit" color="primary" class="w-100 btn btn-primary">
+          Register
+        </button>
+      </form>
+      <button
+        color="primary"
+        class="w-100 mt-2 btn btn-link text-decoration-none"
+        (click)="handleSignIn()"
+      >
+        I have already account
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- SPINNER CODE
+<ngx-spinner
+  bdColor="rgba(0, 0, 0, 0.8)"
+  size="medium"
+  color="#fff"
+  type="square-jelly-box"
+  [fullScreen]="true"
+  ><p style="color: white">Loading...</p></ngx-spinner
+> -->

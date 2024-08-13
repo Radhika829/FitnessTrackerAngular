@@ -1,0 +1,68 @@
+<div class="container-fluid">
+  <div class="sub-container border p-5 bg-light">
+    <h4 class="mb-4 fs-4 text-primary" style="font-weight: 500">
+      User Profile
+    </h4>
+
+    <form>
+      <div class="d-flex">
+        <div class="form-group mb-4 w-50 me-1">
+          <label for="exampleInputEmail1">FullName</label>
+          <input type="text" class="form-control" id="name" />
+          <small
+            id="nameHelp"
+            class="form-text text-danger"
+            style="display: none"
+            >Name Is Required</small
+          >
+        </div>
+        <div class="form-group mb-4 w-50">
+          <label for="exampleInputPassword1">Email</label>
+          <input type="text" class="form-control" id="email" />
+          <small
+            id="emailHelp"
+            class="form-text text-danger"
+            style="display: none"
+            >Email Is Required</small
+          >
+        </div>
+      </div>
+      <div class="form-group mb-4">
+        <label for="exampleInputPassword1">Address</label>
+        <input type="text" class="form-control" id="address" />
+        <small
+          id="addressHelp"
+          class="form-text text-danger"
+          style="display: none"
+          >Address Is Required</small
+        >
+      </div>
+      <div class="d-flex">
+        <div class="form-group mb-4 w-50 me-1">
+          <label for="exampleInputPassword1">Contact</label>
+          <input type="number" class="form-control" id="contact" />
+          <small
+            id="contactHelp"
+            class="form-text text-danger"
+            style="display: none"
+            >Please Enter Contact</small
+          >
+        </div>
+      </div>
+      <button
+        type="button"
+        class="btn btn-primary float-start"
+        (click)="handleSubmit()"
+      >
+        Submit
+      </button>
+      <button
+        type="button"
+        class="btn btn-light float-end"
+        (click)="handleClear()"
+      >
+        Clear
+      </button>
+    </form>
+  </div>
+</div>

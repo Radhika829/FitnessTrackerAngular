@@ -1,0 +1,92 @@
+<div class="container-fluid">
+  <div style="width: 70%">
+    <table class="table table-success table-striped">
+      <thead>
+        <tr>
+          <th>Day</th>
+          <th>WorkOut Name</th>
+          <th>Set</th>
+          <th>Reps</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of List">
+          <td>{{ item.day }}</td>
+          <td>{{ item.workOutName }}</td>
+          <td>{{ item.sets }}</td>
+          <td>{{ item.reps }}</td>
+          <td>
+            <button class="btn btn-outline-dark" (click)="handleCopy(item)">
+              Edit
+            </button>
+            <button
+              class="btn btn-outline-danger mx-2"
+              (click)="handleDelete(item.id)"
+            >
+              Cancel
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="bg-light border-start" style="width: 30%; padding: 80px">
+    <h3 class="text-danger">FITNESS GOAL</h3>
+    <form>
+      <div class="form-group mb-4 mt-5 w-100 me-1">
+        <label for="exampleInputEmail1">Day</label>
+        <select class="form-control" id="day">
+          <option value="MONDAY" selected>Monday</option>
+          <option value="TUESDAY">Tuesday</option>
+          <option value="WEDNESDAY">Wednesday</option>
+          <option value="THURSDAY">Thursday</option>
+          <option value="FRIDAY">Friday</option>
+          <option value="SATURDAY">Saturday</option>
+        </select>
+        <small id="nameHelp" class="form-text text-danger" style="display: none"
+          >Day Is Required</small
+        >
+      </div>
+      <div class="form-group mb-4 w-100">
+        <label for="exampleInputPassword1">WorkOut Name</label>
+        <input type="text" class="form-control" id="workoutName" />
+        <small
+          id="workoutNameHelp"
+          class="form-text text-danger"
+          style="display: none"
+          >WorkOut Name Is Required</small
+        >
+      </div>
+      <div class="form-group mb-4 w-100">
+        <label for="exampleInputPassword1">Set</label>
+        <input type="number" class="form-control" id="set" />
+        <small id="setHelp" class="form-text text-danger" style="display: none"
+          >Set Is Required</small
+        >
+      </div>
+      <div class="form-group mb-4 w-100">
+        <label for="exampleInputPassword1">Reps</label>
+        <input type="number" class="form-control" id="reps" />
+        <small id="repsHelp" class="form-text text-danger" style="display: none"
+          >Reps Is Required</small
+        >
+      </div>
+      <button
+        type="button"
+        class="btn btn-primary float-start"
+        (click)="handleSubmit()"
+      >
+        Submit
+      </button>
+
+      <button
+        type="button"
+        class="btn btn-light float-end"
+        (click)="handleClear()"
+      >
+        Clear
+      </button>
+    </form>
+  </div>
+</div>

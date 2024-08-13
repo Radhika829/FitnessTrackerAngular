@@ -1,0 +1,96 @@
+<div class="container-fluid">
+  <div style="width: 70%">
+    <table class="table table-success table-striped">
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Start Date</th>
+          <th>End Date</th>
+          <th>Add / Loss</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of List">
+          <td>{{ item.type }}</td>
+          <td>{{ item.startDate }}</td>
+          <td>{{ item.endDate }}</td>
+          <td>{{ item.data }}</td>
+          <td>
+            <button
+              class="btn btn-outline-dark"
+              [disabled]="item.status === 'CANCELLED'"
+              (click)="handleCopy(item)"
+            >
+              Edit
+            </button>
+            <button
+              class="btn btn-outline-danger mx-2"
+              [disabled]="item.status === 'CANCELLED'"
+              (click)="handleDelete(item.id)"
+            >
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="bg-light border-start" style="width: 30%; padding: 80px">
+    <h3 class="text-danger">PERSONALIZED EXECISE ROUTINE</h3>
+    <form>
+      <div class="form-group mb-4 mt-5 w-100 me-1">
+        <label for="exampleInputEmail1">Type</label>
+        <select class="form-control" id="type">
+          <option value="WEIGHTLIFTING" selected>Weight Lifting</option>
+          <option value="CALERIES">Caleries</option>
+        </select>
+        <small id="typeHelp" class="form-text text-danger" style="display: none"
+          >Type Is Required</small
+        >
+      </div>
+      <div class="form-group mb-4 w-100">
+        <label for="exampleInputPassword1">Start Date</label>
+        <input type="date" class="form-control" id="startDate" />
+        <small
+          id="startDateHelp"
+          class="form-text text-danger"
+          style="display: none"
+          >Start Date Is Required</small
+        >
+      </div>
+      <div class="form-group mb-4 w-100">
+        <label for="exampleInputPassword1">End Date</label>
+        <input type="date" class="form-control" id="endDate" />
+        <small
+          id="endDateHelp"
+          class="form-text text-danger"
+          style="display: none"
+          >End Date Is Required</small
+        >
+      </div>
+      <div class="form-group mb-4 w-100">
+        <label for="exampleInputPassword1">Add / Loss</label>
+        <input type="number" class="form-control" id="data" />
+        <small id="dataHelp" class="form-text text-danger" style="display: none"
+          >This Is Required Field</small
+        >
+      </div>
+      <button
+        type="button"
+        class="btn btn-primary float-start"
+        (click)="handleSubmit()"
+      >
+        Submit
+      </button>
+
+      <button
+        type="button"
+        class="btn btn-light float-end"
+        (click)="handleClear()"
+      >
+        Clear
+      </button>
+    </form>
+  </div>
+</div>

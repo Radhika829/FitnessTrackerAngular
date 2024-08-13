@@ -1,0 +1,181 @@
+<div class="container-fluid">
+  <div class="sub-container border p-5">
+    <h4 class="mb-4 fs-4 text-primary" style="font-weight: 500">
+      Daily Calender
+    </h4>
+    <div class="d-flex">
+      <div class="w-50 text-danger"><h4>Performance & Progress</h4></div>
+      <div class="w-50 text-danger"><h4>Health Tracker</h4></div>
+    </div>
+    <div class="d-flex">
+      <div class="w-50 me-3 border-end p-3">
+        <form>
+          <div class="d-flex">
+            <div class="form-group mb-4 w-25">
+              <label for="exampleInputEmail1">date</label>
+              <input type="date" class="form-control" id="date1" />
+              <small
+                id="date1Help"
+                class="form-text text-danger"
+                style="display: none"
+                >Date Is Required</small
+              >
+            </div>
+            <div class="form-group mb-4 w-50 mx-2">
+              <label for="exampleInputPassword1">Weight</label>
+              <input type="number" class="form-control" id="weight" />
+              <small
+                id="weightHelp"
+                class="form-text text-danger"
+                style="display: none"
+                >Weight Is Required</small
+              >
+            </div>
+            <div class="form-group mb-4 w-50">
+              <label for="exampleInputPassword1">Calories</label>
+              <input type="number" class="form-control" id="calories" />
+              <small
+                id="caloriesHelp"
+                class="form-text text-danger"
+                style="display: none"
+                >Calories Is Required</small
+              >
+            </div>
+          </div>
+          <button
+            type="button"
+            class="btn btn-primary float-start"
+            (click)="handleSubmit1()"
+          >
+            Submit
+          </button>
+          <button
+            type="button"
+            class="btn btn-info float-start ms-5"
+            (click)="handleGraph1()"
+          >
+            Graph
+          </button>
+          <button
+            type="button"
+            class="btn btn-light float-end"
+            (click)="handleClear1()"
+          >
+            Clear
+          </button>
+        </form>
+        <div class="mt-5">
+          <table class="table table-success table-striped">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Weight</th>
+                <th>Calories</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of List1">
+                <td>{{ item.date }}</td>
+                <td>{{ item.weight }}</td>
+                <td>{{ item.caleries }}</td>
+                <td>
+                  <button class="btn" (click)="handleCopy1(item)">
+                    <span class="material-symbols-outlined"> edit </span>
+                  </button>
+                  <button class="btn" (click)="handleDelete1(item.id)">
+                    <span class="material-symbols-outlined"> delete </span>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="w-50 me-3 p-3">
+        <form>
+          <div class="d-flex">
+            <div class="form-group mb-4 w-25">
+              <label for="exampleInputEmail1">date</label>
+              <input type="date" class="form-control" id="date2" />
+              <small
+                id="date2Help"
+                class="form-text text-danger"
+                style="display: none"
+                >Date Is Required</small
+              >
+            </div>
+            <div class="form-group mb-4 w-50 mx-2">
+              <label for="exampleInputPassword1">Heart Rate</label>
+              <input type="number" class="form-control" id="heartrate" />
+              <small
+                id="heartrateHelp"
+                class="form-text text-danger"
+                style="display: none"
+                >Heart Rate Is Required</small
+              >
+            </div>
+            <div class="form-group mb-4 w-50">
+              <label for="exampleInputPassword1">Blood Pressure</label>
+              <input type="number" class="form-control" id="bloodpressure" />
+              <small
+                id="bloodpressureHelp"
+                class="form-text text-danger"
+                style="display: none"
+                >Blood Pressure Is Required</small
+              >
+            </div>
+          </div>
+          <button
+            type="button"
+            class="btn btn-primary float-start"
+            (click)="handleSubmit2()"
+          >
+            Submit
+          </button>
+          <button
+            type="button"
+            class="btn btn-info float-start ms-5"
+            (click)="handleGraph2()"
+          >
+            Graph
+          </button>
+          <button
+            type="button"
+            class="btn btn-light float-end"
+            (click)="handleClear2()"
+          >
+            Clear
+          </button>
+        </form>
+        <div class="mt-5">
+          <table class="table table-success table-striped">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Heart Rate</th>
+                <th>Blood Pressure</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of List2">
+                <td>{{ item.date }}</td>
+                <td>{{ item.heartrate }}</td>
+                <td>{{ item.bloodpressure }}</td>
+                <td>
+                  <button class="btn" (click)="handleCopy2(item)">
+                    <span class="material-symbols-outlined"> edit </span>
+                  </button>
+                  <button class="btn" (click)="handleDelete2(item.id)">
+                    <span class="material-symbols-outlined"> delete </span>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
